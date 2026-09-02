@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="720.0" prefWidth="1050.0" spacing="10.0" style="-fx-background-color: #f4f6f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.uam.edu.centronic.controllers.MatriculaController">
+    <children>
+        <!-- ENCABEZADO CON LOGO Y TITULO -->
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #0d9488; -fx-padding: 12 20 12 20;">
+            <children>
+                <ImageView fx:id="imgLogo" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png" />
+                    </image>
+                </ImageView>
+                <Vbox aligmnent = "CENTER_LEFT">
+                    <children>
+                        <Label text="Centro Nicaragüense de Formación Tecnológica" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label text="Sistema de Matrícula Académica" textFill="#ccfbf1">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+</VBox>
+        </children>
+        </HBox>
+
+        <!-- CONTENEDOR PRINCIPAL: FORMULARIO (IZQUIERDA) Y TABLA (DERECHA) -->
+<HBox spacing="15.0" VBox.vgrow="ALWAYS">
+<children>
+    <!-- PANEL DEL FORMULARIO CON SCROLL -->
+    <ScrollPane fitToWidth="true" prefWidth="420.0" style="-fx-background-color: transparent;">
+        <content>
+            <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 15;">
+                <children>
+                    <Label text="Datos del Estudiante" textFill="#0f766e">
+                        <font>
+                            <Font name="System Bold" size="15.0" />
+                        </font>
+                    </Label>
+
+                    <!-- NOMBRES Y APELLIDOS -->
+                    <Label text="Nombres:">
+                        <font><Font name="System Bold" size="12.0" /></font>
+                    </Label>
+                    <TextField fx:id="txtNombres" promptText="Ej. Claudio Antonio" style="-fx-background-radius: 5;" />
+
+                    <Label text="Apellidos:">
+                        <font><Font name="System Bold" size="12.0" /></font>
+                    </Label>
+                    <TextField fx:id="txtApellidos" promptText="Ej. De La Rocha Acevedo" style="-fx-background-radius: 5;" />
+
+                    <!-- USUARIO Y CONTRASEÑA -->
+                    <HBox spacing="10.0">
+                        <children>
+                            <VBox HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label text="Usuario (mín. 5 car.):">
+                                        <font><Font name="System Bold" size="12.0" /></font>
+                                    </Label>
+                                    <TextField fx:id="txtUsuario" promptText="claud12" style="-fx-background-radius: 5;" />
+                                </children>
+                            </VBox>
+                            <VBox HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label text="Contraseña (mín. 8 car.):">
+                                        <font><Font name="System Bold" size="12.0" /></font>
+                                    </Label>
+                                    <PasswordField fx:id="txtPassword" promptText="••••••••" style="-fx-background-radius: 5;" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+
+                    <!-- FECHA DE NACIMIENTO Y DEPARTAMENTO -->
+                    <HBox spacing="10.0">
+                        <children>
+                            <VBox HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label text="Fecha de nacimiento:">
+                                        <font><Font name="System Bold" size="12.0" /></font>
+                                    </Label>
+                                    <DatePicker fx:id="dpFechaNacimiento" maxWidth="1.7976931348623157E308" promptText="dd/mm/aaaa" />
+                                </children>
+                            </VBox>
+                            <VBox HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label text="Departamento:">
+                                        <font><Font name="System Bold" size="12.0" /></font>
+                                    </Label>
+                                    <ComboBox fx:id="cmbDepartamento" maxWidth="1.7976931348623157E308" promptText="Seleccione..." />
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+
+                    <!-- CURSO (LISTVIEW) -->
+                    <Label text="Seleccione el Curso:">
+                        <font><Font name="System Bold" size="12.0" /></font>
+                    </Label>
+                    <ListView fx:id="lvCursos" prefHeight="95.0" style="-fx-background-radius: 5;" />
+
+                    <!-- MODALIDAD (RADIOBUTTONS) -->
+                    <Label text="Modalidad:">
+                        <font><Font name="System Bold" size="12.0" /></font>
+                    </Label>
+                    <HBox spacing="25.0">
+                        <children>
+                            <RadioButton fx:id="rbPresencial" mnemonicParsing="false" text="Presencial" />
+                            <RadioButton fx:id="rbVirtual" mnemonicParsing="false" text="Virtual" />
+                        </children>
+                    </HBox>
+
+                    <!-- HORARIOS (CHECKBOXES) -->
+                    <Label text="Horario preferido:">
+                        <font><Font name="System Bold" size="12.0" /></font>
+                    </Label>
+                    <HBox spacing="15.0">
+                        <children>
+                            <CheckBox fx:id="chkMatutino" mnemonicParsing="false" text="Matutino" />
+                            <CheckBox fx:id="chkVespertino" mnemonicParsing="false" text="Vespertino" />
+                            <CheckBox fx:id="chkSabatino" mnemonicParsing="false" text="Sabatino" />
+                        </children>
+                    </HBox>
+
+                    <!-- ACEPTACIÓN DE NORMAS (CHECKBOX) -->
+                    <CheckBox fx:id="chkAceptaNormas" mnemonicParsing="false" text="Acepto las normas y reglamento del centro" textFill="#0f766e">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </CheckBox>
+
+                    <!-- BOTONES DE ACCIÓN -->
+                    <HBox alignment="CENTER" spacing="15.0">
+                        <children>
+                            <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarOnClick" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #0d9488; -fx-background-radius: 6; -fx-cursor: hand;" text="Matricular" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="13.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#limpiarOnClick" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #e2e8f0; -fx-background-radius: 6; -fx-cursor: hand;" text="Limpiar">
+                                <font>
+                                    <Font name="System Bold" size="13.0" />
+                                </font>
+                            </Button>
+                        </children>
+                        <VBox.margin>
+                            <Insets top="5.0" />
+                        </VBox.margin>
+                    </HBox>
+                </children>
+            </VBox>
+        </content>
+    </ScrollPane>
+
+    <!-- PANEL DE LA TABLA (DERECHA) -->
+    <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+        <children>
+            <HBox alignment="CENTER_LEFT">
+                <children>
+                    <Label text="Estudiantes Matriculados" textFill="#0f766e">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                    </Label>
+                    <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label fx:id="lblTotalRegistros" text="Total matriculados: 0" textFill="#475569">
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
+                </children>
+            </HBox>
+
+            <TableView fx:id="tblEstudiantes" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNombreCompleto" prefWidth="160.0" text="Nombre Completo" />
+                    <TableColumn fx:id="colDepartamento" prefWidth="100.0" text="Departamento" />
+                    <TableColumn fx:id="colCurso" prefWidth="110.0" text="Curso" />
+                    <TableColumn fx:id="colModalidad" prefWidth="90.0" text="Modalidad" />
+                    <TableColumn fx:id="colHorario" prefWidth="90.0" text="Horario" />
+                    <TableColumn fx:id="colFechaNac" prefWidth="90.0" text="Fecha Nac." />
+                </columns>
+            </TableView>
+        </children>
+    </VBox>
+</children>
+<padding>
+    <Insets bottom="10.0" left="15.0" right="15.0" top="5.0" />
+</padding>
+</HBox>
+        </children>
+        </VBox>
