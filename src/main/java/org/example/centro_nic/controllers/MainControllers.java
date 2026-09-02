@@ -1,9 +1,9 @@
-package org.example.centro_nic;
+package org.example.centro_nic.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class MainControllers {
     @FXML
     private Label welcomeText;
 
