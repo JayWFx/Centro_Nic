@@ -1,12 +1,11 @@
-module org.example.centro_nic {
+module ni.uam.edu.centronic {
     requires javafx.controls;
     requires javafx.fxml;
+    requires static lombok;
 
-    opens org.example.centro_nic to javafx.fxml;
-    opens org.example.centro_nic.controllers to javafx.fxml;
-    opens org.example.centro_nic.models to javafx.base;
-
-    exports org.example.centro_nic;
-    exports org.example.centro_nic.controllers;
-    exports org.example.centro_nic.models;
+    opens ni.uam.edu.centronic.controllers to javafx.fxml;
+    opens ni.uam.edu.centronic.modelos to javafx.base;
+    exports ni.uam.edu.centronic;
+    exports ni.uam.edu.centronic.controllers;
+    exports ni.uam.edu.centronic.modelos;
 }
