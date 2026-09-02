@@ -5,8 +5,8 @@ Aplicación de escritorio desarrollada en **JavaFX 21** y **Scene Builder** para
 
 ## Integrantes del Equipo
 
-* **Donald Hernández** — *Desarrollador / Integrante*
-* **Claudio De La Rocha** — *Desarrollador / Integrante*
+* **Donald Hernández** 
+* **Claudio De La Rocha** 
 
 ---
 
