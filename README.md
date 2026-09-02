@@ -3,18 +3,18 @@
 Aplicación de escritorio desarrollada en **JavaFX 21** y **Scene Builder** para la gestión de matrícula de estudiantes del **Centro Nicaragüense de Formación Tecnológica**.
 ---
 
-## 👥 Integrantes del Equipo
+## Integrantes del Equipo
 
 * **Donald Hernández** — *Desarrollador / Integrante*
 * **Claudio De La Rocha** — *Desarrollador / Integrante*
 
 ---
 
-## 📌 Descripción del Proyecto
+## Descripción del Proyecto
 
 El proyecto responde al **Caso 1: Sistema de matrícula** de la Evaluación Sistemática de JavaFX Temurin 21. Permite registrar, mostrar, actualizar, filtrar y eliminar la información de los estudiantes matriculados en cursos como *Programación*, *Excel*, *Redes* y *Diseño Gráfico*.
 
-### 🚀 Características Principales:
+### Características Principales:
 * **Operaciones CRUD Completas:** Registro, actualización, selección mediante eventos y eliminación de registros.
 * **Manejo de Memoria Temporal:** Uso de `ObservableList<Estudiante>` vinculado dinámicamente con `TableView`.
 * **Diseño Visual FXML:** Interfaz construida con Scene Builder mediante contenedores responsivos (`VBox`, `SplitPane`, `GridPane`, `HBox`).
@@ -30,7 +30,7 @@ El proyecto responde al **Caso 1: Sistema de matrícula** de la Evaluación Sist
 
 ---
 
-## 🛠️ Requisitos de Software y Herramientas
+## Requisitos de Software y Herramientas
 
 * **JDK:** Java SE Development Kit 21 (Eclipse Temurin / OpenJDK 21).
 * **JavaFX SDK:** Versión 21.
